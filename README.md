@@ -18,11 +18,10 @@ Assumptions and Limitations
 
 Design Decisions
 
-Setup and Installation ⚙️
-Prerequisites
-Node.js (v16 or higher)
+Setup and Installation ⚙
 
-MongoDB (local or cloud instance)
+
+MongoDB (local
 
 ## Postman or any API testing tool
 
