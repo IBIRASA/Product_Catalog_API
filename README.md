@@ -1,8 +1,8 @@
-### Product Catalog API 
+## Product Catalog API 
 
 Welcome to the Product Catalog API! This RESTful API is designed to manage products and categories for an e-commerce platform. It supports CRUD operations, inventory tracking, and search functionality.
 
-### Table of Contents 
+## Table of Contents 
 
 Setup and Installation
 
