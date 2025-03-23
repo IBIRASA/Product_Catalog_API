@@ -30,7 +30,7 @@ Clone the repository:
 
 bash
 Copy
-git clone https://github.com/your-username/product-catalog-api.git
+git clone https://https://github.com/IBIRASA/Product_Catalog_API.git
 cd product-catalog-api
 Install dependencies:
 
