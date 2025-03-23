@@ -303,7 +303,7 @@ Copy
 "discount": 5
 }
 
-## Assumptions and Limitations ⚠️
+## Assumptions and Limitations 
 
 Unique Category Names: Category names must be unique.
 
