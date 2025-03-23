@@ -1,8 +1,8 @@
-### Product Catalog API 🛒
+### Product Catalog API 
 
 Welcome to the Product Catalog API! This RESTful API is designed to manage products and categories for an e-commerce platform. It supports CRUD operations, inventory tracking, and search functionality.
 
-### Table of Contents 📚
+### Table of Contents 
 
 Setup and Installation
 
@@ -50,11 +50,11 @@ Copy
 npm start
 The API will be available at http://localhost:3000.
 
-API Documentation 📖
+API Documentation 
 Base URL
 Copy
 http://localhost:3000/api
-### Product Endpoints 📦
+### Product Endpoints 
 
 1. Get All Products
    URL: /products
@@ -197,7 +197,7 @@ Copy
 {
 "message": "Product deleted"
 }
-Category Endpoints 🗂️
+Category Endpoints 
 
 1. Get All Categories
    URL: /categories
@@ -240,7 +240,7 @@ Copy
 "name": "Electronics",
 "description": "All electronic gadgets"
 }
-Example Requests and Responses 📨
+Example Requests and Responses 
 Create a Category
 Request:
 
@@ -316,7 +316,7 @@ Product Variants: Products can have multiple variants (e.g., size, color, stock)
 
 ## Scalability: The API is designed for small to medium-sized e-commerce platforms.
 
-## Design Decisions 🎨
+## Design Decisions 
 
 MongoDB: Chosen for its flexibility and scalability in handling product and category data.
 
