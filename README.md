@@ -39,12 +39,18 @@ MONGO_URI=mongodb://localhost:27017/product-catalog
 
 ```
 
-`Create a .env file in the root directory.`
+Create a .env file in the root directory.
+
+```
+
+``
 
 3. **Start the Server**
-   ```
-   npm start
-   ```
+```
+
+npm start
+
+```
 
 ## **Api documentation**
 
@@ -102,3 +108,4 @@ MONGO_URI=mongodb://localhost:27017/product-catalog
 ## **Api documentation link**
 
 ### Click [here](https://documenter.getpostman.com/view/42118517/2sAYkHpe3Q)
+```
