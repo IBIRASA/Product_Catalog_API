@@ -1,114 +1,89 @@
 # Product Catalog API
 
+## Overview
+
 Welcome to the Product Catalog API! This RESTful API is designed to manage products and categories for an e-commerce platform. It supports CRUD operations, inventory tracking, and search functionality, making it a robust solution for managing product data.
+**API IS NOW LIVE!!!!! CHECK IT OUT [HERE](https://documenter.getpostman.com/view/42118517/2sAYkHpe3Q)**
 
-# Table of Contents
+## Table of Contents
 
-## Setup and Installation
+1 .[ Installation ](#Installation) 2. [Api documentation](#documentation) -[Product](#product) -[Category](#category) -[inventory management](#inventory-management) -[Authentication](#authentication) 4.[ Api documentation link](#documentation)
 
-## API Documentation
+## **Installation**
 
-## Product Endpoints
+1. **Clone the Repository**:
 
-## Category Endpoints
+   ```git clone https://github.com/IBIRASA/Product_Catalog_API.git
 
-## Testing with Postman
+   ```
 
+2. **Installation of dependencies**
 
-# Setup and Installation
+`npm install `
+`Node.js (v16 or higher)` 3. **Configure MongoDb**
 
-Before running the Product Catalog API, ensure you have the following installed:
+```MONGO_URI=mongodb://localhost:27017/product-catalog
 
-### Node.js (v16 or higher)
+```
 
-### MongoDB (local or cloud instance)
+`Create a .env file in the root directory.`
 
-# Steps to Get Started
+3. **Start the Server**
+   `npm start`
 
-## Clone the Repository:
+## **Api documentation**
 
-git clone https://github.com/IBIRASA/Product_Catalog_API.git
+### **Product**
 
-## Install Dependencies:
+#### **GET** - List All Products
 
-npm install
-Configure MongoDB:
+- **URL**: `http://localhost:3000/api/products`
+- **Description**: Retrieve a list of all products.
 
-Create a .env file in the root directory.
+#### **POST** - Create new product
 
-Add your MongoDB connection URI:
+- **URL**: `http://localhost:3000/api/products`
+- **Description**: Create a new product.
 
-MONGO_URI=mongodb://localhost:27017/product-catalog
-Start the Server:
+#### **PUT** - Update a product
 
-npm start
-The API will be available at http://localhost:3000.
+- **URL**: `http://localhost:3000/api/products/id`
+- **Description**: Update a product.
 
-# API Documentation
+#### ** DELETE** - Delete a product
 
-All endpoints are prefixed with the following base URL:
+- **URL**: `http://localhost:3000/api/products/id`
+- **Description**: Delete a product.
 
-http://localhost:3000/api
+### **Category**
 
-# Product Endpoints
+#### **GET** - List All the categories
 
-#### Get All Products
+- **URL**: `http://localhost:3000/api/categories`
+- **Description**: Retrieve a list of all the categories.
 
-URL: /products
+#### **POST** - Create a new category
 
-Method: GET
+- **URL**: `http://localhost:3000/api/categories`
+- **Description**:Create a new category.
 
-Description: Retrieve a list of all products.
+#### **PUT** - Update a category
 
-## Get Product by ID
+- **URL**: `http://localhost:3000/api/categories/id`
+- **Description**:Update a category.
 
-URL: /products/:id
+## **Authentication**
 
-Method: GET
+#### **POST** -Register
 
-Description: Retrieve a single product by its ID.
+- **URL**: `http://localhost:3000/api/auth/register`
+- **Description**:Register a new user
 
-## Create a Product
+#### **POST** -Login
 
-URL: /products
+- **URL**: `http://localhost:3000/api/auth/login`
+- **Description**:Login a new user
 
-Method: POST
+## **Api documentation link**
 
-Description: Create a new product.
-
-## Update a Product
-
-URL: /products/:id
-
-Method: PUT
-
-Description: Update an existing product by its ID.
-
-## Delete a Product
-
-URL: /products/:id
-
-Method: DELETE
-
-Description: Delete a product by its ID.
-
-# Get All Categories
-
-URL: /categories
-
-Method: GET
-
-Description: Retrieve a list of all categories.
-
-## Create a Category
-
-URL: /categories
-
-Method: POST
-
-Description: Create a new category.
-
-## API Documentation using POSTMAN
-
-
-[API  DESIGN Documentation](https://documenter.getpostman.com/view/42118517/2sAYkHpe3Q)
+Click [here](https://documenter.getpostman.com/view/42118517/2sAYkHpe3Q)
