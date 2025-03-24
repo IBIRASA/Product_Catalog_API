@@ -8,13 +8,7 @@ Welcome to the Product Catalog API! This RESTful API is designed to manage produ
 
 ## Table of Contents
 
-1 .[ Installation ](#Installation) 
-2. [Api documentation](#documentation) 
--[Product](#product)
- -[Category](#category) 
- -[inventory management](#inventory-management) 
- -[Authentication](#authentication) 
- 3.[ Api documentation link](#documentation)
+1 .[ Installation ](#Installation) 2. [Api documentation](#documentation) -[Product](#product) -[Category](#category) -[inventory management](#inventory-management) -[Authentication](#authentication) 3.[ Api documentation link](#documentation)
 
 ## **Installation**
 
@@ -25,19 +19,32 @@ Welcome to the Product Catalog API! This RESTful API is designed to manage produ
 
    ```
 
-2. **Installation of dependencies**
+2. **Installation of dependencies**:
 
-`npm install `
-`Node.js (v16 or higher)` 3. **Configure MongoDb**
+```
+npm install
+```
 
-```MONGO_URI=mongodb://localhost:27017/product-catalog
+```
+
+Node.js (v16 or higher)
+
+```
+
+3. **Configure MongoDb**:
+
+```
+
+MONGO_URI=mongodb://localhost:27017/product-catalog
 
 ```
 
 `Create a .env file in the root directory.`
 
 3. **Start the Server**
-   `npm start`
+   ```
+   npm start
+   ```
 
 ## **Api documentation**
 
@@ -95,3 +102,11 @@ Welcome to the Product Catalog API! This RESTful API is designed to manage produ
 ## **Api documentation link**
 
 Click [here](https://documenter.getpostman.com/view/42118517/2sAYkHpe3Q)
+
+```
+
+```
+
+```
+
+```
