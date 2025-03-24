@@ -20,7 +20,8 @@ Welcome to the Product Catalog API! This RESTful API is designed to manage produ
 
 1. **Clone the Repository**:
 
-   ```git clone https://github.com/IBIRASA/Product_Catalog_API.git
+   ```
+   git clone https://github.com/IBIRASA/Product_Catalog_API.git
 
    ```
 
