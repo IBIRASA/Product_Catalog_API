@@ -8,14 +8,15 @@ Welcome to the Product Catalog API! This RESTful API is designed to manage produ
 
 ## Table of Contents
 
-1. .[ Installation ]\_(#Installation)
-2. .[Api documentation]\_(#documentation)
+1. .[ Installation ](#Installation)
+2. .[Api documentation](#documentation)
 
-- .[Product]\_(#product)
-- .[Category]\_(#category)
-- .[inventory management]\_(#inventory-management)
-- .[Authentication]_(#authentication) 
-3.[ Api documentation link]_(#documentation)
+- .[Product](#product)
+- .[Category](#category)
+- .[inventory management](#inventory-management)
+- .[Authentication](#authentication) 
+
+3.[ Api documentation link](#documentation)
 
 ## **Installation**
 
