@@ -38,19 +38,14 @@ Node.js (v16 or higher)
 MONGO_URI=mongodb://localhost:27017/product-catalog
 
 ```
-
+```
 Create a .env file in the root directory.
 
-```
-
-``
-
+ ```
 3. **Start the Server**
-```
-
-npm start
-
-```
+   ```
+   npm start
+   ```
 
 ## **Api documentation**
 
@@ -108,4 +103,3 @@ npm start
 ## **Api documentation link**
 
 ### Click [here](https://documenter.getpostman.com/view/42118517/2sAYkHpe3Q)
-```
