@@ -51,7 +51,7 @@ Create a .env file in the root directory.
 
 ## **Api documentation**
 
-### **Product**
+## **Product**
 
 #### **GET** - List All Products
 
@@ -68,12 +68,12 @@ Create a .env file in the root directory.
 - **URL**: `http://localhost:3000/api/products/id`
 - **Description**: Update a product.
 
-#### ** DELETE** - Delete a product
+#### **DELETE** - Delete a product
 
 - **URL**: `http://localhost:3000/api/products/id`
 - **Description**: Delete a product.
 
-### **Category**
+## **Category**
 
 #### **GET** - List All the categories
 
@@ -90,7 +90,7 @@ Create a .env file in the root directory.
 - **URL**: `http://localhost:3000/api/categories/id`
 - **Description**:Update a category.
 
-### **Inventory Management**
+## **Inventory Management**
 
 - **URL**: `http://localhost:3000/api/products/low-stock`
 - **Description**:Get the low stock.
