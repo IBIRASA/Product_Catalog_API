@@ -38,10 +38,12 @@ Node.js (v16 or higher)
 MONGO_URI=mongodb://localhost:27017/product-catalog
 
 ```
+
 ```
 Create a .env file in the root directory.
 
- ```
+```
+
 3. **Start the Server**
    ```
    npm start
@@ -87,6 +89,11 @@ Create a .env file in the root directory.
 
 - **URL**: `http://localhost:3000/api/categories/id`
 - **Description**:Update a category.
+
+### **Inventory Management**
+
+- **URL**: `http://localhost:3000/api/products/low-stock`
+- **Description**:Get the low stock.
 
 ## **Authentication**
 
