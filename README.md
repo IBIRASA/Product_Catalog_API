@@ -3,11 +3,18 @@
 ## Overview
 
 Welcome to the Product Catalog API! This RESTful API is designed to manage products and categories for an e-commerce platform. It supports CRUD operations, inventory tracking, and search functionality, making it a robust solution for managing product data.
+
 **API IS NOW LIVE!!!!! CHECK IT OUT [HERE](https://documenter.getpostman.com/view/42118517/2sAYkHpe3Q)**
 
 ## Table of Contents
 
-1 .[ Installation ](#Installation) 2. [Api documentation](#documentation) -[Product](#product) -[Category](#category) -[inventory management](#inventory-management) -[Authentication](#authentication) 4.[ Api documentation link](#documentation)
+1 .[ Installation ](#Installation) 
+2. [Api documentation](#documentation) 
+-[Product](#product)
+ -[Category](#category) 
+ -[inventory management](#inventory-management) 
+ -[Authentication](#authentication) 
+ 3.[ Api documentation link](#documentation)
 
 ## **Installation**
 
