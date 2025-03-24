@@ -101,12 +101,4 @@ MONGO_URI=mongodb://localhost:27017/product-catalog
 
 ## **Api documentation link**
 
-Click [here](https://documenter.getpostman.com/view/42118517/2sAYkHpe3Q)
-
-```
-
-```
-
-```
-
-```
+### Click [here](https://documenter.getpostman.com/view/42118517/2sAYkHpe3Q)
