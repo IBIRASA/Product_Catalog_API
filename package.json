@@ -1,31 +1,22 @@
 {
   "name": "product-catalog-api",
+  "type": "module",
   "version": "1.0.0",
-  "description": "RESTful API for a product catalog system",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "api",
-    "catalog",
-    "ecommerce",
-    "node",
-    "express"
-  ],
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
   "dependencies": {
-    "body-parser": "^1.20.2",
-    "cors": "^2.8.5",
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^1.20.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "mongoose": "^7.8.6"
+    "express-rate-limit": "^7.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^11.1.0"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
-  }
+  "description": ""
 }

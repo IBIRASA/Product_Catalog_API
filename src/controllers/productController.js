@@ -1,167 +1,148 @@
-// src/controllers/productController.js
-// import Product from "../models/Product";
+import {
+  getAllProducts as _getAllProducts,
+  getProductById as _getProductById,
+  createProduct as _createProduct,
+  updateProduct as _updateProduct,
+  deleteProduct as _deleteProduct,
+  searchProducts as _searchProducts,
+  getLowStockProducts as _getLowStockProducts,
+} from "../services/productService.js";
 
-// export const createProduct = (req, res) => {
-//   const { name, description, price, category } = req.body;
-//   res
-//     .status(201)
-//     .json({ message: "Product created", name, description, price, category });
-// };
-import Product from "../models/Product.js";
-import Category from "../models/Category.js";
-// export const createProduct = async (req, res) => {
-//   const { name, description, price, category } = req.body;
-
-//   if (!name || !description || !price || !category) {
-//     return res.status(400).json({ message: "All fields are required" });
-//   }
-
-//   try {
-//     // const categoryExists = await Category.findById(category);
-//     console.log("Category ID:", category); // Log category ID to check if it's valid
-//     const categoryExists = await Category.findById(category);
-//     console.log("Category Exists:", categoryExists); // Log result to see if it finds the category
-    
-//     if (!categoryExists) {
-//       return res.status(400).json({ message: "Category not found" });
-//     }
-//     const product = new Product({
-//       name,
-//       description,
-//       price,
-//       category,
-//     });
-
-//     // Save the product to MongoDB
-//     await product.save();
-//     console.log("Product saved:", product); // Add this line to debug
-
-//     // Respond with the saved product
-//     res.status(201).json(product);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ message: "Error creating product" });
-//   }
-// };
-export const createProduct = async (req, res) => {
-  const { name, description, price, category } = req.body;
-
-  if (!name || !description || !price || !category) {
-    return res.status(400).json({ message: "All fields are required" });
-  }
-
+/**
+ * Get all products with optional filtering by category, price range, and stock status
+ */
+const getAllProducts = async (req, res) => {
   try {
-    // Find category by name
-    const categoryExists = await Category.findOne({ name: category });
+    const filters = req.query; // Extract filters from query params
+    const products = await _getAllProducts(filters);
+    res.json(products);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+const searchProducts = async (req, res) => {
+  try {
+    const { query } = req.query;
+    console.log("Search Query:", query); // Ensure the query is being received correctly
 
-    if (!categoryExists) {
-      return res.status(400).json({ message: "Category not found" });
+    if (!query || typeof query !== "string") {
+      return res
+        .status(400)
+        .json({ message: "Valid search query is required" });
     }
 
-    // Now we have the correct ObjectId
-    const product = new Product({
-      name,
-      description,
-      price,
-      category: categoryExists._id,  // Assign the ObjectId, not the name
-    });
+    const products = await _searchProducts(query);
+    console.log("Found Products:", products); // Log the found products
 
-    await product.save();
-    res.status(201).json(product);
+    res.json(products);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Error creating product" });
+    console.error("Error:", error.message); // Log any error
+    res.status(500).json({ message: error.message });
   }
 };
 
-export const getAllProducts = async (req, res) => {
+/**
+ * Get a single product by ID
+ */
+const getProductById = async (req, res) => {
   try {
-    const products = await Product.find(); // Fetch all products from MongoDB
-    res.status(200).json(products); // Return the list of products in the response
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Error fetching products" });
-  }
-};
-export const deleteProduct = async (req, res) => {
-  const { id } = req.params; // Get the product ID from the URL parameters
-
-  try {
-    const product = await Product.findByIdAndDelete(id); // Find and delete the product
-
-    if (!product) {
-      return res.status(404).json({ message: "Product not found" }); // If the product doesn't exist
+    const product = await _getProductById(req.params.id);
+    if (product) {
+      res.json(product);
+    } else {
+      res.status(404).json({ message: "Product not found" });
     }
-
-    res.status(200).json({ message: "Product deleted successfully" }); // Success response
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Error deleting product" });
+    res.status(500).json({ message: error.message });
   }
 };
-export const updateProduct = async (req, res) => {
-  const { id } = req.params; // Get the product ID from the URL parameters
-  const { name, description, price, category } = req.body;
 
-  if (!name || !description || !price || !category) {
-    return res.status(400).json({ message: "All fields are required" });
+/**
+ * Create a new product
+ */
+const createProduct = async (req, res) => {
+  try {
+    const newProduct = await _createProduct(req.body);
+    res.status(201).json(newProduct);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
+
+/**
+ * Update a product by ID
+ */
+const updateProduct = async (req, res) => {
+  try {
+    const updatedProduct = await _updateProduct(req.params.id, req.body);
+    if (updatedProduct) {
+      res.json(updatedProduct);
+    } else {
+      res.status(404).json({ message: "Product not found" });
+    }
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
+
+/**
+ * Delete a product by ID
+ */
+const deleteProduct = async (req, res) => {
+  try {
+    const deletedProduct = await _deleteProduct(req.params.id);
+    if (deletedProduct) {
+      res.json({ message: "Product deleted" });
+    } else {
+      res.status(404).json({ message: "Product not found" });
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+/**
+ * Get low stock products for inventory tracking
+ */
+
+const getLowStockProducts = async (req, res) => {
+  try {
+    const lowStockProducts = await _getLowStockProducts();
+    res.status(200).json(lowStockProducts);
+  } catch (err) {
+    res.status(500).json({ message: "Error fetching low stock products." });
+  }
+};
+
+// Update product stock
+const updateStock = async (req, res) => {
+  const { id } = req.params;
+  const { stock } = req.body;
+
+  if (typeof stock !== "number" || stock < 0) {
+    return res.status(400).json({ message: "Invalid stock value." });
   }
 
   try {
-    // Find the product by ID and update it with the new data
     const updatedProduct = await Product.findByIdAndUpdate(
       id,
-      { name, description, price, category },
-      { new: true } // This option ensures the updated document is returned
+      { stock },
+      { new: true }
     );
-
-    if (!updatedProduct) {
-      return res.status(404).json({ message: "Product not found" });
-    }
-
-    // Respond with the updated product
+    if (!updatedProduct)
+      return res.status(404).json({ message: "Product not found." });
     res.status(200).json(updatedProduct);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Error updating product" });
+  } catch (err) {
+    res.status(500).json({ message: "Error updating stock." });
   }
 };
-
-// Controller for searching and filtering products
-export const searchProducts = async (req, res) => {
-  try {
-    const { name, category, minPrice, maxPrice } = req.query; // Extract query parameters
-
-    // Build the query object
-    let filter = {};
-
-    // Search by product name (partial match)
-    if (name) {
-      filter.name = { $regex: name, $options: "i" }; // Case-insensitive search
-    }
-
-    // Filter by category
-    if (category) {
-      filter.category = category;
-    }
-
-    // Filter by price range (minPrice and maxPrice)
-    if (minPrice || maxPrice) {
-      filter.price = {};
-      if (minPrice) filter.price.$gte = parseFloat(minPrice);
-      if (maxPrice) filter.price.$lte = parseFloat(maxPrice);
-    }
-
-    // Log the filter object for debugging
-    console.log("Filter:", filter);
-
-    // Fetch the filtered products from the database
-    const products = await Product.find(filter); // MongoDB query with the filter
-
-    // Return the filtered products
-    res.status(200).json(products);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Error fetching products" });
-  }
+export {
+  getAllProducts,
+  searchProducts,
+  getProductById,
+  createProduct,
+  updateProduct,
+  deleteProduct,
+  getLowStockProducts,
+  updateStock,
 };
