@@ -8,7 +8,14 @@ Welcome to the Product Catalog API! This RESTful API is designed to manage produ
 
 ## Table of Contents
 
-1 .[ Installation ](#Installation) 2. [Api documentation](#documentation) -[Product](#product) -[Category](#category) -[inventory management](#inventory-management) -[Authentication](#authentication) 3.[ Api documentation link](#documentation)
+1. .[ Installation ]\_(#Installation)
+2. .[Api documentation]\_(#documentation)
+
+- .[Product]\_(#product)
+- .[Category]\_(#category)
+- .[inventory management]\_(#inventory-management)
+- .[Authentication]_(#authentication) 
+3.[ Api documentation link]_(#documentation)
 
 ## **Installation**
 
@@ -107,6 +114,6 @@ Create a .env file in the root directory.
 - **URL**: `http://localhost:3000/api/auth/login`
 - **Description**:Login a new user
 
-## **Api documentation link**
+## **Api documentation link/Postman**
 
 ### Click [here](https://documenter.getpostman.com/view/42118517/2sAYkHpe3Q)
