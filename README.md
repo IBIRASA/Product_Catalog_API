@@ -110,4 +110,5 @@ Description: Create a new category.
 
 ## API Documentation using POSTMAN
 
-https://documenter.getpostman.com/view/42118517/2sAYkHpe3Q
+
+[API  DESIGN Documentation](https://documenter.getpostman.com/view/42118517/2sAYkHpe3Q)
