@@ -16,7 +16,7 @@ Welcome to the Product Catalog API! This RESTful API is designed to manage produ
 - .[inventory management](#inventory-management)
 - .[Authentication](#authentication) 
 
-3.[ Api documentation link](#documentation)
+3. .[ Api documentation link](#documentation)
 
 ## **Installation**
 
